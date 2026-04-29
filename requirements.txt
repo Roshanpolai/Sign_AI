@@ -1,6 +1,6 @@
 streamlit
 opencv-python-headless==4.8.0.76
 numpy==1.26.4
-mediapipe==0.10.30
+mediapipe==0.10.9
 gtts
 scikit-learn
