@@ -63,14 +63,14 @@ model_path = os.path.join(os.getcwd(), "gesture_model.pkl")
 
 model = None
 try:
-    model = pickle.load(open(model_path, "rb"))
+    with open(model_path, "rb") as f: model = pickle.load(f)
 except:
     st.error("❌ Model not found. Please check deployment files.")
 
+# ---------------- MEDIAPIPE ----------------
+import mediapipe as mp
 
-# ---------------- MEDIAPIPE ----------------
-# ---------------- MEDIAPIPE ----------------
-from mediapipe.python.solutions import hands as mp_hands
+mp_hands = mp.solutions.hands
 
 hands = mp_hands.Hands(
     max_num_hands=1,
