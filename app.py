@@ -1,10 +1,8 @@
 import streamlit as st
 import cv2
 import numpy as np
-import mediapipe as mp
 import pickle
 from gtts import gTTS
-import tempfile
 import os
 
 # ---------------- PAGE CONFIG ----------------
@@ -71,7 +69,9 @@ except:
 
 
 # ---------------- MEDIAPIPE ----------------
-mp_hands = mp.solutions.hands
+# ---------------- MEDIAPIPE ----------------
+from mediapipe.python.solutions import hands as mp_hands
+
 hands = mp_hands.Hands(
     max_num_hands=1,
     min_detection_confidence=0.5,
